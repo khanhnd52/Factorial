@@ -17,8 +17,26 @@ int main(int argc, char const *argv[])
 {
   //getFactorialV1();
   //getFactorialV2(6); //1.2.3.4.5.6 = 720
-  getFactorialV3();
+  //int result = getFactorialV3();
+  //printf("%d\n", getFactorialV3());
+
+  getFactorialV4(5);  //ngầm trả về 120, éo thèm in
+  printf("%d\n", getFactorialV4(5));
+
   return 0;
+}
+
+int getFactorialV4(int n){
+  int acc = 1;
+
+  if(n == 0 || n == 1)
+    acc = 1;
+  else //tạm thời chưa chặn n < 0
+    for(int i = 2; i <= n; i++)
+      acc *= i;
+  
+  //printf("%d! = %d\n", n, acc);
+  return acc;
 }
 
 int getFactorialV3(){
@@ -32,9 +50,9 @@ int getFactorialV3(){
     for(int i = 2; i <= n; i++)
       acc *= i;
   
-  //printf("%d! = %d\n", n, acc);
-  return acc;  //do ham ko return
   printf("%d! = %d\n", n, acc);
+  return acc;  //do ham ko return
+  //printf("%d! = %d\n", n, acc);
 }
 
 void getFactorialV2(int n){
